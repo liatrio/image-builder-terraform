@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 RUN apk add --no-cache \
     git \
@@ -8,6 +8,9 @@ RUN apk add --no-cache \
     make \
     musl-dev \
     go
+
+ARG GOLANG_VERSION=1.18
+RUN wget https://dl.google.com/go/go$GOLANG_VERSION.src.tar.gz && tar -C /usr/local -xzf go$GOLANG_VERSION.src.tar.gz
 
 # Configure Go
 ENV GOROOT /usr/lib/go
