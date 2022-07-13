@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 RUN apk add --no-cache \
     git \
@@ -8,6 +8,9 @@ RUN apk add --no-cache \
     make \
     musl-dev \
     go
+
+ARG GOLANG_VERSION=1.18
+RUN wget https://dl.google.com/go/go$GOLANG_VERSION.src.tar.gz && tar -C /usr/local -xzf go$GOLANG_VERSION.src.tar.gz
 
 # Configure Go
 ENV GOROOT /usr/lib/go
@@ -34,7 +37,7 @@ RUN apk --update add --virtual verify gpgme \
  && rm -rf /tmp/* \
  && rm -rf /var/cache/apk/*
 
-ENV TERRAGRUNT_VERSION 0.37.1
+ENV TERRAGRUNT_VERSION 0.38.4
 RUN curl -f -Lo terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 && \
   chmod +x terragrunt && \
   mv terragrunt /usr/bin
