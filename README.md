@@ -7,7 +7,7 @@ This repository contains a workflow that creates a current release tag and then 
 - Version [0.38.4](https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64) of Terraform wrapper Terragrunt 
 
 ## What is the image for?
-The image's intendended purpose is to be able to be used as a reusable image to be used as a jenkins agent. By using the installed features the user is able to create jenkins pipeline that can trigger terraform scripts to deploy and update infrastructure. Additionally, Terragrunt gives the ability to use extra tools for Terraform.
+The intended purpose of this image is for it to be used as a Jenkins agent. By using the installed features the user is able to create Jenkins pipelines that can trigger Terraform scripts to deploy and update infrastructure. Additionally, Terragrunt gives the ability to use extra tools for Terraform.
 
 ## What is required to run this workflow?
-For this workflow to run, the only thing that needs to be input is a user or organizations `GITHUB_TOKEN` into the secrets of the repo. 
+For this workflow to run, the only thing that needs to be input is a user or organizations `GITHUB_TOKEN`, which is automatically provided by GitHub Actions.
