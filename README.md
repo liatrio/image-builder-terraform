@@ -43,7 +43,7 @@ stage('Build') {
 
 ## What is installed on this image?
 - Version [1.18](https://dl.google.com/go/go1.18.src.tar.gz) of the Go programming language
-- Version [1.2.1](https://releases.hashicorp.com/terraform/1.2.1/) of infrastructure as code tool Terraform
+- Version [1.2.5](https://releases.hashicorp.com/terraform/1.2.1/) of infrastructure as code tool Terraform
 - Version [0.38.4](https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64) of Terraform wrapper Terragrunt 
 
 # Build
